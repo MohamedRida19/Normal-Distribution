@@ -34,6 +34,7 @@ def numeric_user_input(message, default = None):
 #creating string input function
 def string_user_input(mes1, default):
     user_input = str(input(mes1)).strip()
+    print_loading_message("Checking the input!", "Done!")
     if not user_input:
         print("Using default options")
         user_input = default
@@ -67,43 +68,19 @@ try:
             loc_var = numeric_user_input("I want the value of loc (where is the bell start, recommended 0):\n", default = default_loc_var)
             scale_var = numeric_user_input("I want the value of scale(how flat is the graph, recommende 1):\n", default = default_scale_var)
                 
-            graph_color = str(input("Choose the color of the graph (skip this by pressing enter)\n")).strip()
-            print_loading_message("Cheking the input!", "Done!")
-            if not graph_color:
-                print("Default options applied!")
-                graph_color = default_graph_color
-            elif not graph_color.replace('.','').isdigit():
-                print("Customizing options applied!")
-                pass
-            else:
-                print('What! Anyways default settings applied.')
+            graph_color = string_user_input("Choose the color of the graph (skip this by pressing enter)\n", default_graph_color)
+            
                 
             time.sleep(0.3)
             print("Moving on: text options")
             time.sleep(0.1)
-            font_type = str(input("you can set the font type (skip this by pressing enter):\n")).strip()
-            print_loading_message("Cheking the input!", "Done!")
-            if not font_type:
-                print("default options applied!")
-                font_type = default_font_type
-            elif not font_type.replace('.','').isdigit():
-                print("Customizing options applied!")
-                pass
-            else:
-                print("What? Anyways default settings applied")
+            font_type = string_user_input("you can set the font type (skip this by pressing enter):\n", default_font_type)
                 
             font_size = numeric_user_input("set the font size pls(recommended 16pts):\n", default = default_font_size)
 
-            font_color = str(input("you can set the font color (skip this by pressing etner):\n")).strip()
-            print_loading_message("Checking the input!", "Done!")
-            if not font_color:
-                print("Default options applied!")
-                font_color = default_font_color
-            elif not font_color.replace('.','').isdigit():
-                print("Customizing options applied!")
-                pass
-            else :
-                print("What! Anyways default settings applied.")
+            font_color = string_user_input("you can set the font color (skip this by pressing etner):\n", default_font_color)
+
+            
         elif change_options == 'no':
             print("Default settings applied!")
             pass
