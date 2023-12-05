@@ -31,6 +31,19 @@ def numeric_user_input(message, default = None):
         except ValueError:
             print("Invalid input. Try again and input a numerical postive value!")
 
+#creating string input function
+def string_user_input(mes1, default):
+    user_input = str(input(mes1)).strip()
+    if not user_input:
+        print("Using default options")
+        user_input = default
+    elif not user_input.replace('.','').isdigit():
+        print("Customizing options applied")
+        pass
+    else:
+        print("What?? Anyways default options applied")
+        user_input = default
+
 #print welcome messages
 print('welcome to our program of buildings figures!')#print "welcome_message"
 time.sleep(0.5)#waiting 200ms befor passing this line
