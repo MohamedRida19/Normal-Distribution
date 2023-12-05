@@ -92,7 +92,14 @@ try:
                     pass
                 else :
                     print("What! Anyways default settings applied.")
-                
+            elif change_options == 'no':
+                print("Default settings applied!")
+                pass
+            else:
+                print("I cannot understand this! default settings applied!")    
+                pass
+            
+            
         except ValueError as ve:
             print()
 except ValueError as ve:
