@@ -36,3 +36,11 @@ print('welcome to our program of buildings figures!')#print "welcome_message"
 time.sleep(0.5)#waiting 200ms befor passing this line
 print('thank you for your trying my program!')
 time.sleep(0.5)#waiting 500ms befor passing this line
+
+#set the try except block for handling errors
+try:
+    print()
+except ValueError as ve:
+    print()
+except KeyboardInterrupt as kbi:
+    print()
