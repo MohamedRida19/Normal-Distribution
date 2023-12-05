@@ -98,10 +98,14 @@ try:
             else:
                 print("I cannot understand this! default settings applied!")    
                 pass
-            #adding the figure's code 
+            #adding the figure's code
+            print_loading_message("Calculating DATA!", "Creating new figure done!") 
             data = np.random.normal(loc = loc_var if change_options == "yes" else default_loc_var , scale= scale_var if change_options == "yes" else default_scale_var, size= 1000)
             sns.histplot(data, kde = True, linewidth = 0, color = graph_color if change_options == "yes" else default_graph_color)
-            
+            #adding the title to the figure
+            text_options = {'font_type' : font_type if change_options == "yes" else default_font_type, 'font_size' : font_size if change_options == "yes" else default_font_size, 'font_color' : font_color if change_options == "yes" else default_font_color}
+            plt.title("NORMAL DISTRIBUTION", **text_options)
+            plt.show()
         except ValueError as ve:
             print()
 except ValueError as ve:
