@@ -43,10 +43,14 @@ try:
     user_attempts = int(input('how many times you want to try this? (only positif integer numbers)'))
     print_loading_message("Checking the input!", "Done!")
     i = 0
-    #adding for in loop based on the user attepmts
+    #adding for in loop based on the user attempts
     for i in range(user_attempts):
+        #ask the user if he want to change the options
+        change_options = str(input("do you want to change the options (yes/no)?")).split()
         
+
 except ValueError as ve:
     print()
+
 except KeyboardInterrupt as kbi:
     print()
