@@ -92,14 +92,21 @@ try:
             pass
         #adding the figure's code
         print_loading_message("Calculating DATA!", "Creating new figure done!") 
+        time.sleep(0.2)
         data = np.random.normal(loc = loc_var if change_options == "yes" else default_loc_var , scale= scale_var if change_options == "yes" else default_scale_var, size= 1000)
         sns.histplot(data, kde = True, linewidth = 0, color = graph_color if change_options == "yes" else default_graph_color)
         #adding the title to the figure
         text_options = {'font' : font_type if change_options == "yes" else default_font_type, 'size' : font_size if change_options == "yes" else default_font_size, 'color' : font_color if change_options == "yes" else default_font_color}
         plt.title("NORMAL DISTRIBUTION", **text_options)
         plt.show()
-        
+        time.sleep(0.3)
+        print(f"excuting_times: {i+1}")
 
+    time.sleep(0.3)
+    print('program excuting has been finished, exit applying now!')#tell the user that the program has beeing done his attempts
+    time.sleep(0.3)
+    exit()
+    
 except ValueError as ve:
     print(f"Incorrect input: {ve}. Pls try again!")
     exit()
