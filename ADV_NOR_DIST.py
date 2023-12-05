@@ -39,7 +39,8 @@ time.sleep(0.5)#waiting 500ms befor passing this line
 
 #set the try except block for handling errors
 try:
-    print()
+    #get from the user the number of attepmts
+    user_attempts = int(input('how many times you want to try this? (only positif integer numbers)'))
 except ValueError as ve:
     print()
 except KeyboardInterrupt as kbi:
