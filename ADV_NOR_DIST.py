@@ -98,7 +98,9 @@ try:
             else:
                 print("I cannot understand this! default settings applied!")    
                 pass
-            
+            #adding the figure's code 
+            data = np.random.normal(loc = loc_var if change_options == "yes" else default_loc_var , scale= scale_var if change_options == "yes" else default_scale_var, size= 1000)
+            sns.histplot(data, kde = True, linewidth = 0, color = graph_color if change_options == "yes" else default_graph_color)
             
         except ValueError as ve:
             print()
