@@ -22,28 +22,31 @@ def print_loading_message(message1, message2):
     print(message2)
 
 #creating numeric inputs function
-def numeric_user_input(message, default = None):
+def numeric_user_input(message, default=None):
     while True:
         try:
             user_input = float(input(message).strip())
             print_loading_message("Checking the input!", "Done!")
-            return user_input if user_input > 0 else default
+            return user_input if user_input > 0 else (default if default is not None else print("Customizing option applied") or default)
         except ValueError:
-            print("Invalid input. Try again and input a numerical postive value!")
+            print("Invalid input. Try again and input a numerical positive value!")
 
-#creating string input function
-def string_user_input(mes1, default):
-    user_input = str(input(mes1)).strip()
+# creating string input function
+def string_user_input(mes1, default=None):
+    user_input = input(mes1).strip()
     print_loading_message("Checking the input!", "Done!")
-    if not user_input:
-        print("Using default options")
-        user_input = default
-    elif not user_input.replace('.','').isdigit():
-        print("Customizing options applied")
+    try:
+        if not user_input:
+            print("Using default options")
+            return default if default is not None else print("Customizing option applied") or default
+        elif not user_input.replace('.', '').isdigit():
+            print("Customizing options applied")
+            return user_input
+        else:
+            print("What?? Anyways default options applied")
+            return default if default is not None else print("Customizing option applied") or default
+    except NameError:
         pass
-    else:
-        print("What?? Anyways default options applied")
-        user_input = default
 
 #print welcome messages
 print('welcome to our program of buildings figures!')#print "welcome_message"
@@ -95,9 +98,10 @@ try:
         text_options = {'font' : font_type if change_options == "yes" else default_font_type, 'size' : font_size if change_options == "yes" else default_font_size, 'color' : font_color if change_options == "yes" else default_font_color}
         plt.title("NORMAL DISTRIBUTION", **text_options)
         plt.show()
+        
 
 except ValueError as ve:
-    print(f"Incorrect input: {ve}. Pls try again and enter a postif integer value!")
+    print(f"Incorrect input: {ve}. Pls try again!")
     exit()
 except KeyboardInterrupt as kbi:
     print(f"Something wrong: {kbi}. Pls try again!")
