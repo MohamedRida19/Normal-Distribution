@@ -13,10 +13,20 @@ default_font_size = 16
 default_font_color = "red"
 
 #creating loading function
-def print_loading_message(message):
-    print(message, end='', flush= False)
+def print_loading_message(message1, message2):
+    print(message1, end='', flush= False)
     for i in range(3):
         time.sleep(0.2)
         print('.', end=' ', flush=False)
     time.sleep(0.1)
-    print(message)
+    print(message2)
+
+#creating numeric inputs function
+def numeric_user_input(message, default = None):
+    while True:
+        try:
+            user_input = float(input(message).strip())
+            print_loading_message("Checking the input!", "Done!")
+            return user_input if user_input > 0 else default
+        except ValueError:
+            print("Invalid input. Try again and input a numerical postive value!")
