@@ -30,3 +30,9 @@ def numeric_user_input(message, default = None):
             return user_input if user_input > 0 else default
         except ValueError:
             print("Invalid input. Try again and input a numerical postive value!")
+
+#print welcome messages
+print('welcome to our program of buildings figures!')#print "welcome_message"
+time.sleep(0.5)#waiting 200ms befor passing this line
+print('thank you for your trying my program!')
+time.sleep(0.5)#waiting 500ms befor passing this line
