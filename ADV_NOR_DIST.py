@@ -41,6 +41,11 @@ time.sleep(0.5)#waiting 500ms befor passing this line
 try:
     #get from the user the number of attepmts
     user_attempts = int(input('how many times you want to try this? (only positif integer numbers)'))
+    print_loading_message("Checking the input!", "Done!")
+    i = 0
+    #adding for in loop based on the user attepmts
+    for i in range(user_attempts):
+        
 except ValueError as ve:
     print()
 except KeyboardInterrupt as kbi:
