@@ -3,36 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 20px;
-        }
-
-        h1, h2, h3 {
-            color: #333;
-        }
-
-        p {
-            color: #666;
-        }
-
-        code {
-            background-color: #f0f0f0;
-            padding: 2px 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        pre {
-            background-color: #f8f8f8;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            overflow-x: auto;
-        }
-    </style>
-    <title>Figures Builder Program</title>
+       <title>Figures Builder Program</title>
 </head>
 <body>
 
