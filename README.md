@@ -20,12 +20,14 @@ Customize graph options such as loc (bell start), scale (graph flatness), graph 
 View the generated figure for each attempt.
 Program execution finishes, displaying the message "program executing has been finished."
 <h2>Default Values</h2>
-default_loc_var: 0
-default_scale_var: 1
-default_graph_color: "blue"
-default_font_type: "Arial"
-default_font_size: 16
-default_font_color: "red"
+<ul>
+  <li>default_loc_var: 0</li>
+  <li>default_scale_var: 1</li>
+  <li>default_graph_color: "blue"</li>
+  <li>default_font_type: "Arial"</li>
+  <li>default_font_size: 16</li>
+  <li>default_font_color: "red"</li>
+</ul>
 <h2>Error Handling</h2>
 The program handles incorrect input values and keyboard interrupts gracefully.
 <h2>Additional Notes</h2>
