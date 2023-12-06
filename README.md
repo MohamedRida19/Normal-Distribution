@@ -7,9 +7,11 @@ Generates figures based on the normal distribution.
 User-friendly interface with customizable options for graph appearance.
 Allows users to specify the number of attempts to run the program.
 <h2>Dependencies</h2>
-NumPy
-Seaborn
-Matplotlib
+<ul>
+  <li>Numpy</li>
+  <li>Seaborn</li>
+  <li>Matplotlib</li>
+</ul>
 <h2>How to Use</h2>
 Run the program in a Python environment.
 Input the number of attempts to run the program.
