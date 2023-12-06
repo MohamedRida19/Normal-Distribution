@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title>Figures Builder Program</title>
-</head>
-<body>
-
 <h1>Figures Builder Program</h1>
 
 <h2>Overview</h2>
@@ -58,6 +49,3 @@
 <h2>Additional Notes</h2>
 
 <p>This program is designed for educational purposes and allows users to explore the impact of different parameters on the normal distribution graph.</p>
-
-</body>
-</html>
