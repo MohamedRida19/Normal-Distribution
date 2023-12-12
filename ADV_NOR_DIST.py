@@ -102,7 +102,7 @@ try:
         mean_value = np.mean(data)
         std_value = np.std(data)
         plt.axvline(x = mean_value, color = "red", linestyle = "--", label = f"MEAN: {mean_value:.2f}")
-        plt.axvline(x = mean_value + std_value, color = "orange", linestyle = "--", label = f"STD: {std_value}")
+        plt.axvline(x = mean_value + std_value, color = "orange", linestyle = "--", label = f"STD: {std_value:.2f}")
 
         above_threshold = np.sum(threshold < data)
         pourcentage_above_threshold = (above_threshold / (size_var if change_options == "yes" else default_size)) *100
