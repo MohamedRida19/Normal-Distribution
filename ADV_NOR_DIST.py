@@ -109,7 +109,7 @@ try:
         plt.axvline(x= (threshold if change_options == "yes" else default_threshold), color = "green", linestyle= "--", label = f'THRESHOLD: {pourcentage_above_threshold: .2f}%')
         plt.annotate('threshold', xy = (threshold, 0), xytext= (0,10), textcoords = 'offset points', ha = "center", color = "black")
 
-        sns.histplot(data, kde = True, linewidth = 0, color = graph_color if change_options == "yes" else default_graph_color, fill = 0)
+        sns.histplot(data, kde = True, color = graph_color if change_options == "yes" else default_graph_color, fill = 0)
         #adding the title to the figure
         text_options = {'font' : font_type if change_options == "yes" else default_font_type, 'size' : font_size if change_options == "yes" else default_font_size, 'color' : font_color if change_options == "yes" else default_font_color}
         plt.xlabel("Values")
