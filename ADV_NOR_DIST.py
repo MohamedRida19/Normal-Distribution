@@ -11,6 +11,7 @@ default_graph_color = "blue"
 default_font_type = "Arial"
 default_font_size = 16
 default_font_color = "red"
+default_threshold = 3.5
 
 #creating loading function
 def print_loading_message(message1, message2):
@@ -72,6 +73,7 @@ try:
             scale_var = numeric_user_input("I want the value of scale(how flat is the graph, recommende 1):\n", default = default_scale_var)
                 
             graph_color = string_user_input("Choose the color of the graph (skip this by pressing enter)\n", default_graph_color)
+            threshold = numeric_user_input("add the threshold value(required!).\n")
             
                 
             time.sleep(0.3)
