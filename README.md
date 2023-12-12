@@ -49,3 +49,11 @@
 <h2>Additional Notes</h2>
 
 <p>This program is designed for educational purposes and allows users to explore the impact of different parameters on the normal distribution graph.</p>
+
+<h2>Updates (12/12/2023)</h2>
+
+<ul>
+        <li>Added options for threshold and size in the customization process.</li>
+        <li>Enhanced error handling for user input.</li>
+        <li>Implemented threshold lines on the figure to indicate mean, standard deviation, and data above the threshold.</li>
+</ul>
