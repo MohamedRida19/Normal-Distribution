@@ -12,6 +12,7 @@ default_font_type = "Arial"
 default_font_size = 16
 default_font_color = "red"
 default_threshold = 3.5
+default_size = 100
 
 #creating loading function
 def print_loading_message(message1, message2):
@@ -71,9 +72,10 @@ try:
             print("Starting with: Graph options")
             loc_var = numeric_user_input("I want the value of loc (where is the bell start, recommended 0):\n", default = default_loc_var)
             scale_var = numeric_user_input("I want the value of scale(how flat is the graph, recommende 1):\n", default = default_scale_var)
+            size_var = numeric_user_input("set the size value!\n",default= default_size)
                 
             graph_color = string_user_input("Choose the color of the graph (skip this by pressing enter)\n", default_graph_color)
-            threshold = numeric_user_input("add the threshold value(required!).\n")
+            threshold = numeric_user_input("add the threshold value(required!).\n", default=default_threshold)
             
                 
             time.sleep(0.3)
@@ -95,11 +97,25 @@ try:
         #adding the figure's code
         print_loading_message("Calculating DATA!", "Creating new figure done!") 
         time.sleep(0.2)
-        data = np.random.normal(loc = loc_var if change_options == "yes" else default_loc_var , scale= scale_var if change_options == "yes" else default_scale_var, size= 1000)
-        sns.histplot(data, kde = True, linewidth = 0, color = graph_color if change_options == "yes" else default_graph_color)
+        data = np.random.normal(loc = loc_var if change_options == "yes" else default_loc_var , scale= scale_var if change_options == "yes" else default_scale_var, size= default_size )
+        
+        mean_value = np.mean(data)
+        std_value = np.std(data)
+        plt.axvline(x = mean_value, color = "red", linestyle = "--", label = f"MEAN: {mean_value:.2f}")
+        plt.axvline(x = mean_value + std_value, color = "orange", linestyle = "--", label = f"STD: {std_value}")
+
+        above_threshold = np.sum(threshold < data)
+        pourcentage_above_threshold = (above_threshold / (size_var if change_options == "yes" else default_size)) *100
+        plt.axvline(x= (threshold if change_options == "yes" else default_threshold), color = "green", linestyle= "--", label = f'THRESHOLD: {pourcentage_above_threshold: .2f}%')
+        plt.annotate('threshold', xy = (threshold, 0), xytext= (0,10), textcoords = 'offset points', ha = "center", color = "black")
+
+        sns.histplot(data, kde = True, linewidth = 0, color = graph_color if change_options == "yes" else default_graph_color, fill = 0)
         #adding the title to the figure
         text_options = {'font' : font_type if change_options == "yes" else default_font_type, 'size' : font_size if change_options == "yes" else default_font_size, 'color' : font_color if change_options == "yes" else default_font_color}
+        plt.xlabel("Values")
+        plt.ylabel("Frequency")
         plt.title("NORMAL DISTRIBUTION", **text_options)
+        plt.legend()
         plt.show()
         time.sleep(0.3)
         print(f"excuting_times: {i+1}")
